@@ -30,6 +30,7 @@ export default function UseindNavbar() {
   
 
   const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
    const { userData, login } = useContext(UserContext);
@@ -73,14 +74,14 @@ const handleSignUp = async (e) => {
 
 
      const formDataToSend = new FormData();
-     formDataToSend.append("name", "arun");
+     formDataToSend.append("name", name);
      formDataToSend.append("email", email);
      formDataToSend.append("password", password);
     const res = await axios.post(
       `https://useind.com/admin/API/AuthUser/Registration`,
       formDataToSend
     );
-    console.log(res.data.status);
+    console.log(res);
 
     if (res && res.data.status) {
       setEmail("");
@@ -394,6 +395,14 @@ const handleSignUp = async (e) => {
               <div className="login-signup-popup-card1-1">
                 <h1>Sign Up</h1>
                 <div className="login-signup-popup-card1">
+                  <input
+                    type="text"
+                    placeholder="Enter Name..."
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
+                  ></input>
                   <input
                     type="email"
                     placeholder="Enter Email..."
