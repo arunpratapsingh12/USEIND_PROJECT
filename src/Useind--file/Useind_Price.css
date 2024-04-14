@@ -1,0 +1,418 @@
+.navbar_mobile,
+.footer_mobile {
+    display: none;
+}
+
+.pricing_page {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin-bottom: 100px;
+}
+
+.heading_section {
+    width: 60%;
+    display: grid;
+    place-items: center;
+    margin-top: 50px;
+}
+
+.heading_section h2 {
+    font-size: 76px;
+    font-weight: 600;
+    font-family: "Darker Grotesque", sans-serif;
+    color: #222831;
+    letter-spacing: 3px;
+    /* line-height: 115.2%; */
+    /* margin-top: 50px; */
+}
+
+.heading_section h4 {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    color: #5A6A82;
+    letter-spacing: -2%;
+    /* margin-top: -50px; */
+}
+
+.heading_section .line_3 {
+    display: flex;
+}
+
+.heading_section .line_3 h5 {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    color: #5A6A82;
+    letter-spacing: -2%;
+}
+
+.heading_section .line_3 img {
+    width: 32px;
+    height: 16px;
+    margin-top: 24px;
+    margin-left: 10px;
+}
+
+.heading_section .line_3 #yearly {
+    color: #222831;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+.heading_section .line_3 h6 {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: "Work Sans", sans-serif;
+    color: #5A6A82;
+    letter-spacing: -2%;
+    margin-left: 10px;
+    margin-top: 18px;
+    background-color: #EBEDF1;
+    padding: 8px 4px;
+    border-radius: 2px;
+}
+
+@media (max-width: 600px) {
+
+    .navbar_mobile,
+    .footer_mobile {
+        display: block;
+    }
+
+    .navbar_web,
+    .footer_web {
+        display: none;
+    }
+
+    .pricing_page {
+        margin-top: 100px;
+    }
+
+    .heading_section {
+        width: 80%;
+    }
+
+    .heading_section h2 {
+        font-size: 38px;
+        text-align: center;
+        padding: 0px;
+        /* margin-top: 80px */
+    }
+
+    .heading_section h4 {
+        font-size: 14;
+        margin-top: -10px;
+        text-align: center;
+    }
+}
+@media only screen and (min-width:610px) and (max-width:1024px) {
+    .pricing_page {
+        margin-top: 100px;
+    }
+
+    .heading_section {
+        width: 80%;
+    }
+
+    .heading_section h2 {
+        font-size: 68px;
+        /* margin-top: 80px */
+    }
+
+    .heading_section h4 {
+        font-size: 14;
+        margin-top: -10px;
+        text-align: center;
+    }
+}
+
+/* pricing package section */
+
+
+.pricing_package_section {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.pricing_package_section .card_base_div {
+    width: 48%;
+}
+
+.pricing_package_section .card_base_div .card_base {
+    width: 100%;
+    padding-top: 10px;
+    border-radius: 25px 25px 0px 0px;
+    border-top: 1px  solid rgb(223, 221, 221);
+    border-right: 1px  solid rgb(223, 221, 221);
+    border-left: 1px  solid rgb(223, 221, 221);
+}
+.card_base{
+    padding-bottom: 30px;
+}
+.card_base h3 {
+    font-weight: 700;
+    font-family: "Darker Grotesque", sans-serif;
+    font-size: 28px;
+    color: #142E2C;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.card_base h4 {
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    color: #0F1818;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.card_base h2 {
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    font-size: 45px;
+    color: #0F1818;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#span_1 {
+    color: #6F7A79;
+}
+
+#span_2 {
+    color: #0F1818;
+    font-size: 16px;
+}
+
+.card_base .btn_1 {
+    width: 85%;
+    border: 1px solid #222831;
+    border-radius: 50px;
+    background: none;
+    padding: 8px 0px;
+    color: #222831;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    /* margin-top: -25px; */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card_base h5 {
+    font-weight: 500;
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    color: #0F1818;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.card_base .item {
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.card_base .item img {
+    width: 15px;
+    height: 15px;
+}
+
+.card_base .item h6 {
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    font-size: 12px;
+    color: #6F7A79;
+    margin-top: 0px;
+    margin-left: 5px;
+}
+
+.btn_2 {
+    background-color: #F3F5F7;
+    color: #222831;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    border-top:none ;
+    border-right: 1px solid rgb(223, 221, 221);
+    border-bottom: 1px solid rgb(223, 221, 221);
+    border-left: 1px solid rgb(223, 221, 221);
+    letter-spacing: 0px;
+    border-radius: 0px 0px 25px 25px;
+    padding: 15px 0px;
+}
+
+.pricing_package_section .card_pro {
+    background-color: #D3D9E1;
+    border-radius: 25px 25px 0px 0px;
+}
+
+.card_pro .btn_3 {
+    width: 85%;
+    text-transform: uppercase;
+    border: 1px solid #222831;
+    border-radius: 50px;
+    background-color: #222831;
+    padding: 8px 0px;
+    color: #FFFFFF;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 500;
+    /* margin-top: -25px; */
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn_4 {
+    background-color: #6B7D98;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: "Work Sans", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    border: none;
+    border-radius: 0px 0px 25px 25px;
+    padding: 15px 0px;
+}
+
+@media (max-width: 600px) {
+    .pricing_package_section {
+        width: 80%;
+        display: block;
+    }
+
+    .pricing_package_section .card_base_div {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+}
+@media only screen and (min-width:610px) and (max-width:1024px) {
+    .pricing_package_section {
+        width: 80%;
+    }
+}
+
+/* text_below_pricing card */
+.text_below_pricing_section {
+    width: 50%;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.text_below_pricing_section p {
+    color: #5A6A82;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+@media (max-width: 600px) {
+    .text_below_pricing_section {
+        width: 80%;
+        margin-top: 10px;
+    }
+
+    .text_below_pricing_section p {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+@media only screen and (min-width:610px) and (max-width:1024px) {
+    .text_below_pricing_section {
+        width: 80%;
+    }
+    .text_below_pricing_section p {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+/* table section */
+.table_section {
+    width: 65%;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.table_section table {
+    width: 100%;
+}
+
+.table_section table th {
+    color: #222831;
+    font-weight: 500;
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.table_section table .th_1 {
+    width: 70%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.table_section table .th_2,
+.table_section table .th_3 {
+    text-align: center;
+}
+
+.table_section table .td_1 {
+    width: 70%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.table_section table .td_2,
+.table_section table .td_3 {
+    text-align: center;
+}
+
+.table_section table td {
+    color: #222831;
+    font-weight: 400;
+    font-family: "Work Sans", sans-serif;
+    font-size: 16px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.check_icon_2 {
+    width: 20px;
+    height: 20px;
+    margin-top: 7px;
+}
+.table_section table .rows:nth-child(odd) {
+    background-color: #F3F5F7;
+}
+
+@media (max-width: 600px) {
+    .table_section{
+        width: 90%;
+    }
+    .table_section table .th_1,.table_section table .td_1{
+        width: 50%;
+    }
+}
+@media only screen and (min-width:610px) and (max-width:1024px) {
+    .table_section{
+        width: 80%;
+    }
+    .table_section table .th_1,.table_section table .td_1{
+        width: 60%;
+    }
+}

@@ -1,0 +1,120 @@
+.Contactus-page-card-1{
+    width: 50%;
+    height: auto;
+}
+.Contactus-page-card-2{
+    width: 50%;
+    height: auto;
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+.Contactus-page-card-1 img{
+   width: 100%;
+   height: auto;
+}
+.Contactus-page-card{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+}
+.contactus-page-card-content{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.contactus-page-card-content1{
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+.contactus-page-card-content1 input{
+    height: 45px;
+    width: 450px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #222831;
+    padding-left: 10px;
+}
+.contactus-page-card-content1 textarea{
+    width: 450px;
+    height: 100px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid #222831;
+    padding-left: 10px;
+}
+.Contactus-page-card-2 h1{
+    font-size: 45px;
+    font-weight: 600;
+    font-family: "Open Sans",sans-serif;
+    padding-bottom: 15px;
+}
+.contactus-page-card-content button{
+    height: 50px;
+    width: 180px;
+    background-color: #222831;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-family: "Open Sans",sans-serif;
+}
+@media (max-width:700px)
+{
+    .Contactus-page-card-1{
+        padding-top: 30px;
+        width: 100%;
+        height: auto;
+    }
+    .Contactus-page-card-2{
+        width: 100%;
+        height: auto;
+        padding-top: 20px;
+        padding-bottom: 50px;
+    }
+    .Contactus-page-card-1 img{
+       width: 100%;
+       height: auto;
+    }
+    .Contactus-page-card{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .contactus-page-card-content1 input{
+        height: 35px;
+        width: 90%;
+        border-radius: 5px;
+        border: none;
+        border: 1px solid #222831;
+        padding-left: 10px;
+    }
+    .contactus-page-card-content1 textarea{
+        width: 90%;
+        height: 100px;
+        border-radius: 5px;
+        border: none;
+        border: 1px solid #222831;
+        padding-left: 10px;
+    }
+    .Contactus-page-card-2 h1{
+        font-size: 25px;
+        font-weight: 600;
+        font-family: "Open Sans",sans-serif;
+        padding-bottom: 15px;
+        text-align: center;
+    }
+    .Contactus-page-card1{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .contactus-page-card-content button{
+        height: 40px;
+        width: 130px;
+        background-color: #222831;
+        border-radius: 30px;
+        color: #fff;
+        font-family: "Open Sans",sans-serif;
+    }
+}
