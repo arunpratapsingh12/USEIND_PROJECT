@@ -1,6 +1,6 @@
 import './Useind.css';
 import '../LoginSignupComponent/index.css';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import useindlogo from "./image/useindlogo.png";
 import mobileview from './image/mobileview.gif';
 import { Link } from "react-router-dom";
@@ -14,6 +14,7 @@ import user_icon from "../Login_Dashboard/images/Rectangle 47.png";
 import spam_protection_pdf from "./image/USEIND_ ASM.pdf"
 
 import { useNavigate } from 'react-router-dom';
+import { UserContext } from "../context/UserContext.js";
 import axios from "axios";
 
 
@@ -26,9 +27,12 @@ export default function UseindNavbar() {
 
   // api integration start
 
+  
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+   const { userData, login } = useContext(UserContext);
 
 const validateEmail = () => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -66,31 +70,86 @@ const handleSignUp = async (e) => {
     return;
   }
   try {
-    const res = await axios.post(
-      ``,
-      {
-        email,
-        password,
-      }
-    );
-    console.log(res);
 
-    if (res && res.data.success) {
+
+     const formDataToSend = new FormData();
+     formDataToSend.append("name", "arun");
+     formDataToSend.append("email", email);
+     formDataToSend.append("password", password);
+    const res = await axios.post(
+      `https://useind.com/admin/API/AuthUser/Registration`,
+      formDataToSend
+    );
+    console.log(res.data.status);
+
+    if (res && res.data.status) {
       setEmail("");
       setPassword("");
       setConfirmPassword("");
-      handleClosePopup();
-      alert(res.data.massage);
-      navigate();
+      handleCloseSignup();
+      alert("success ",res.data.msg);
+      const userData1 = { email: email, password: password };
+      login(userData1);
+      console.log(userData)
+
+      navigate("/Dashboard_Home");
     } else {
-      alert(res.data.massage);
+      alert(res.data.msg);
     }
   } catch (error) {
-    console.log(error);
-    alert(error);
+    console.log("error",error);
+    alert("error", error);
   }
-};
+  };
+  
 
+  //login start
+  const [loginEmail, setloginEmail] = useState("");
+  const [loginPassword, setloginPassword] = useState("");
+
+  const handleLogin = async (e) => {
+ e.preventDefault();
+ try {
+   //validate
+   if (!loginEmail) {
+     alert("Please Enter your email");
+     return;
+   }
+
+   if (!loginPassword) {
+     alert("Please Enter your Password");
+     return;
+   }
+
+
+       const formDataToSend = new FormData();
+       formDataToSend.append("email", loginEmail);
+       formDataToSend.append("password", loginPassword);
+   const res = await axios.post(
+     `https://useind.com/admin/API/AuthUser/Login`,
+     formDataToSend
+   );
+
+   console.log(res);
+   if (res && res.data.status) {
+     setloginEmail("");
+     setloginPassword("");
+     alert(res.data.msg);
+     handleClose();
+     const userData1 = { email: loginEmail, password: loginPassword };
+     login(userData1);
+     console.log(userData);
+
+     navigate("/Dashboard_Home");
+    
+   } else {
+     alert(res.data.massage);
+   }
+ } catch (error) {
+   console.log(error);
+   alert(error);
+ }
+  }
 
   // api integration end
 
@@ -102,18 +161,18 @@ const handleSignUp = async (e) => {
       handleOpenPopup();
     }
   }
-  function getUserDet(e) {
-    if (e.target.name === "user_email") setUserEmail(e.target.value);
-    else if (e.target.name === "user_pass") setUserPass(e.target.value);
-  }
-  async function goto_dashboard() {
-    if (user_email === "user@gmail.com" && user_pass === "user1234") {
-      localStorage.setItem("login", true);
-      handleClose();
-      navigate("/Dashboard_Home");
-      // useNavigate("/Dashboard")
-    } else alert("Invalid Username or Password");
-  }
+  // function getUserDet(e) {
+  //   if (e.target.name === "user_email") setUserEmail(e.target.value);
+  //   else if (e.target.name === "user_pass") setUserPass(e.target.value);
+  // }
+  // async function goto_dashboard() {
+  //   if (user_email === "user@gmail.com" && user_pass === "user1234") {
+  //     localStorage.setItem("login", true);
+  //     handleClose();
+  //     navigate("/Dashboard_Home");
+  //     // useNavigate("/Dashboard")
+  //   } else alert("Invalid Username or Password");
+  // }
   function log_Out() {
     localStorage.clear();
     navigate("/");
@@ -159,7 +218,7 @@ const handleSignUp = async (e) => {
               <Link to={"/Contact-Us"} style={{ textDecoration: "none" }}>
                 <p>Contact Us</p>
               </Link>
-              {localStorage.getItem("login") ? (
+              {localStorage.getItem("userData") ? (
                 <div className="user_icon">
                   <div className="dropdown1">
                     <img
@@ -264,18 +323,23 @@ const handleSignUp = async (e) => {
                   <input
                     type="email"
                     placeholder="Enter Email..."
-                    name="user_email"
-                    onChange={getUserDet}
+                    value={loginEmail}
+                    onChange={(e) => {
+                      setloginEmail(e.target.value);
+                    }}
                   ></input>
                   <input
                     type="password"
                     placeholder="Enter Password..."
-                    name="user_pass"
-                    onChange={getUserDet}
+                    value={loginPassword}
+                    onChange={(e) => {
+                      setloginPassword(e.target.value);
+                    }}
+                    required
                   ></input>
                 </div>
                 <div className="login-signup-popup-card2">
-                  <button onClick={goto_dashboard}>Login</button>
+                  <button onClick={handleLogin}>Login</button>
                   <p>
                     Don’t have an account?{" "}
                     <span onClick={handleOpenSignup}>Signup Now</span>
